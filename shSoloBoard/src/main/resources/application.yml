@@ -1,0 +1,53 @@
+server:
+  port : 9093
+
+#Oracle Connect
+spring:
+  datasource:
+   url: jdbc:oracle:thin:@localhost:1521/xe
+   username: shtest
+   password: tiger
+   driver-class-name: oracle.jdbc.driver.OracleDriver
+   
+  #DevTools
+  devtools: 
+    livereload:
+      enabled: true
+      
+  #Jpa Setting  (under spring)
+  jpa: 
+    hibernate:
+      ddl-auto: update  # none create
+    properties:
+      hibernate:
+        default_batch_fetch_size :500 
+      show_sql:   true         # System.out 에 하이버네이트 실행 SQL
+      format_sql: true
+    database-platform: org.hibernate.dialect.Oracle10gDialect
+
+  #view resolver(under spring)
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+      
+  #Gmail Transfer(under spring)
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: caredog.caredog@gmail.com
+    password: rbicnrxqtyqyttzi
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls.enable: true
+        
+      
+#MyBatis
+mybatis:
+  config-location: classpath:configuration/configuration.xml
+  mapper-locations: classpath:mappers/**/*.xml
+
+logging.level:
+  org.hibernate.SQL: debug   # logger를 통해 하이버네이트 실행 SQL
