@@ -11,6 +11,7 @@ import org.springframework.web.socket.handler.TextWebSocketHandler;
 
 import lombok.extern.log4j.Log4j2;
 
+// 다수의 클라이언트가 보낸 메세지를 처리할 핸들러
 @Component
 @Log4j2
 public class ChatHandler extends TextWebSocketHandler {

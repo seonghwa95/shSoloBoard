@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	Hello, World!!
+	채팅
 </body>
 </html>
